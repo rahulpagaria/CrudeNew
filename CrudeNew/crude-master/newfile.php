@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
 </head>
 <section>
-  <div class="content">
-    <canvas height="52px" width="242px" class="logo"></canvas>
-    <div class="desc">Pixel logo "drawing" animation,<br>made with canvas and jQuery.</div>
-  </div>
+	<div class="content">
+		<canvas height="52px" width="242px" class="logo"></canvas>
+		<div class="desc">
+			Pixel logo "drawing" animation,<br>made with canvas and jQuery.
+		</div>
+	</div>
 </section>
 <body>
-echo "<script type='text/javascript'>\n";
+	echo "
+	<script type='text/javascript'>\n";
 
 
 $test = setInterval(function(){ drawKhaosi(2, 2); }, 50);
@@ -215,7 +221,8 @@ function drawKhaosi($startCoordX, $startCoordY){
 } 
 
 //javascript goes here
-echo "</script>";
+echo "</script>
+	";
 
 </body>
 </html>
