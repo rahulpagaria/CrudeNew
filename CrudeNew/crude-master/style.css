@@ -2,11 +2,13 @@
 #body_bg
 { 
 	/*background-color:#FFFFF0; */
+  background-color: #fff;
 
-background: url('bg-9-full.jpg') no-repeat; 
 background-size: 100%;
 
-	/*background-image: url("bg-9-full.jpg");
+	/*
+	background: url('bg-9-full.jpg') no-repeat; 
+	background-image: url("bg-9-full.jpg");
 	background-position: center;
    background-size: cover;
     height: 100%;
