@@ -47,7 +47,7 @@ if (! empty($_GET['status'])) {
     switch ($_GET['status']) {
         case 'succ':
             $statusMsgClass = 'alert-success';
-            $statusMsg = 'Members data has been inserted successfully.';
+            $statusMsg = 'Employees data has been inserted successfully.';
             break;
         case 'err':
             $statusMsgClass = 'alert-danger';
@@ -84,8 +84,8 @@ if (! empty($statusMsg)) {
     ?>
     <div class="panel panel-default">
 		<div class="panel-heading">
-			Members list <a href="javascript:void(0);"
-				onclick="$('#importFrm').slideToggle();">Import Members</a>
+			Employees list <a href="javascript:void(0);"
+				onclick="$('#importFrm').slideToggle();">Import Employees</a>
 		</div>
 		<div class="panel-body">
 			<form action="importData.php" method="post"

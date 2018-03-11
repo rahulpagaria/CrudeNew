@@ -33,9 +33,9 @@ if (isset($_POST['importSubmit'])) {
             // parse data from csv file line by line
             while (($line = fgetcsv($csvFile)) !== FALSE) {
                 
-                $numinserts = 0;
+              //  $numinserts = 0;
                 
-                $numupdates = 0;
+              //  $numupdates = 0;
                 
                 
                 // check whether member already exists in database with same email
@@ -45,15 +45,15 @@ if (isset($_POST['importSubmit'])) {
                    // error_log("Hello Worldty u ");
                    // error_log("UPDATE employees SET name = '" . $line[0] . "', address = '" . $line[1] . "', salary = '" . $line[2] . "'  WHERE name = '" . $line[0] . "'");
                     // update member data
-                    $updResult = $connection->query("UPDATE employees SET name = '" . $line[0] . "', address = '" . $line[1] . "', salary = '" . $line[2] . "'  WHERE name = '" . $line[0] . "'");
-                    $numupdates = $updResult->num_rows;
+                     $connection->query("UPDATE employees SET name = '" . $line[0] . "', address = '" . $line[1] . "', salary = '" . $line[2] . "'  WHERE name = '" . $line[0] . "'");
+                   // $numupdates = $updResult->num_rows;
                    /* echo $numupdates;
                     print $numupdates; */
                     
                 } else {
                     // insert employee data into database
-                    $insResult = $connection->query("INSERT INTO employees (name, address, salary) VALUES ('" . $line[0] . "','" . $line[1] . "','" . $line[2] .  "')");
-                    $numinserts = $insResult->num_rows;
+                    $connection->query("INSERT INTO employees (name, address, salary) VALUES ('" . $line[0] . "','" . $line[1] . "','" . $line[2] .  "')");
+                 //   $numinserts = $insResult->num_rows;
                     /* echo $numinserts;
                     print $numinserts;
  */                    
