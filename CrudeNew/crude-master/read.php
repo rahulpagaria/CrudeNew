@@ -64,6 +64,8 @@ if (isset($_GET["id"]) && ! empty(trim($_GET["id"]))) {
 </head>
 <body>
 	<div class="wrapper">
+	
+	<!-- CREATE CONTAINER TO STATIC CALL RECORD TABLE  --> 
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">

@@ -9,6 +9,8 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+
+<!-- Custom Inbuilt css code -->
 <style type="text/css">
 .wrapper {
 	width: 650px;
@@ -18,14 +20,15 @@
 .page-header h2 {
 	margin-top: 0;
 }
-
+ <!-- align right -->
+ 
 table tr td:last-child a {
-	margin-right: 15px;
+	margin-right: 15px;      
 }
 </style>
 <script type="text/javascript">
         $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();   
+            $('[data-toggle="tooltip"]').tooltip();    // Tool tip shows on full page load
         });
     </script>
 </head>
@@ -47,18 +50,18 @@ if (! empty($_GET['status'])) {
     switch ($_GET['status']) {
         case 'succ':
             $statusMsgClass = 'alert-success';
-            $statusMsg = 'Employees data has been inserted successfully.';
+            $statusMsg = 'Employees data has been inserted successfully.'; // success message
             break;
         case 'err':
             $statusMsgClass = 'alert-danger';
-            $statusMsg = 'Some problem occurred, please try again.';
+            $statusMsg = 'Some problem occurred, please try again.'; //  any other error
             break;
         case 'invalid_file':
             $statusMsgClass = 'alert-danger';
-            $statusMsg = 'Please upload a valid CSV file.';
+            $statusMsg = 'Please upload a valid CSV file.';  // file format error displayed on the same form for user to try again
             break;
         default:
-            $statusMsgClass = '';
+            $statusMsgClass = '';  // keep message bar empty
             $statusMsg = '';
     }
 }
@@ -69,23 +72,24 @@ if (! empty($_GET['status'])) {
     <div class="page-header clearfix">
     <h5 class="pull-left" align = "right"> </h5>
     <a href="./logout.php" class="btn btn-danger pull-right">Logout</a>
+        <a href="./index.php" class="btn btn-info pull-right">Index Page</a>
+    
     </div>
     </div>
     
+       
     <?php
 
-   
-    
-    
+  
     
 if (! empty($statusMsg)) {
-        echo '<div class="alert ' . $statusMsgClass . '">' . $statusMsg . '</div>';
+        echo '<div class="alert ' . $statusMsgClass . '">' . $statusMsg . '</div>';  // dynamic allocation of style 
     }
     ?>
     <div class="panel panel-default">
 		<div class="panel-heading">
 			Employees list <a href="javascript:void(0);"
-				onclick="$('#importFrm').slideToggle();">Import Employees</a>
+				onclick="$('#importFrm').slideToggle();">Import Employees</a>  <!-- Animation effect of message on click in jquery -->
 		</div>
 		<div class="panel-body">
 			<form action="importData.php" method="post"

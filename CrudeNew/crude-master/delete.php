@@ -61,7 +61,9 @@ if (isset($_POST["id"]) && ! empty($_POST["id"])) {
 						<h1>Delete Record</h1>
 					</div>
 					<form
-						action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"
+						action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);
+						// user will get error messages on the same page as the form
+						?>"
 						method="post">
 						<div class="alert alert-danger fade in">
 							<input type="hidden" name="id"

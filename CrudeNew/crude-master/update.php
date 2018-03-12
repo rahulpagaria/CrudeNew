@@ -17,7 +17,7 @@ if (isset($_POST["id"]) && ! empty($_POST["id"])) {
         $name_err = "Please enter a name.";
     } elseif (! filter_var(trim($_POST["name"]), FILTER_VALIDATE_REGEXP, array(
         "options" => array(
-            "regexp" => "/^[a-zA-Z'-.\s ]+$/"
+            "regexp" => "/^[a-zA-Z'-.\s ]+$/"  // Alphabet
         )
     ))) {
         $name_err = 'Please enter a valid name.';
@@ -38,7 +38,7 @@ if (isset($_POST["id"]) && ! empty($_POST["id"])) {
     if (empty($input_salary)) {
         $salary_err = "Please enter the salary amount.";
     } elseif (! ctype_digit($input_salary)) {
-        $salary_err = 'Please enter a positive integer value.';
+        $salary_err = 'Please enter a positive integer value.'; 
     } else {
         $salary = $input_salary;
     }
@@ -152,7 +152,9 @@ if (isset($_POST["id"]) && ! empty($_POST["id"])) {
 					</div>
 					<p>Please edit the input values and submit to update the record.</p>
 					<form
-						action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>"
+						action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); 
+						// REQUEST_URI will display any query string attached to the url
+						?>"
 						method="post">
 						<div
 							class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
