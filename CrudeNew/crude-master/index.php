@@ -30,18 +30,19 @@ table tr td:last-child a {
 </head>
 <body>
 	<div class="wrapper">
-	<div class="col-md-12">
-					<div class="page-header clearfix">
-						<h5 class="pull-left" align = "right"> </h5>
-						<a href="./logout.php" class="btn btn-danger pull-right">Logout</a>
-					</div>
-	</div>
-	<div class="col-md-12">
-					<div class="page-header clearfix">
-						<h2 class="pull-left">Import Employees in Batch</h2>
-						<a href="./importcsv.php" class="btn btn-success pull-right">Batch Import CSV</a>
-					</div>
-	</div>
+		<div class="col-md-12">
+			<div class="page-header clearfix">
+				<h5 class="pull-left" align="right"></h5>
+				<a href="./logout.php" class="btn btn-danger pull-right">Logout</a>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="page-header clearfix">
+				<h2 class="pull-left">Import Employees in Batch</h2>
+				<a href="./importcsv.php" class="btn btn-success pull-right">Batch
+					Import CSV</a>
+			</div>
+		</div>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
@@ -51,10 +52,12 @@ table tr td:last-child a {
 							Employee</a>
 					</div>
                     <?php
-                   /* if (! $_SESSION['login']) {
-                        header("location:login.php");
-                        die();
-                    }*/
+                    /*
+                     * if (! $_SESSION['login']) {
+                     * header("location:login.php");
+                     * die();
+                     * }
+                     */
                     // Include config file
                     require_once 'config.php';
                     
@@ -80,8 +83,8 @@ table tr td:last-child a {
                                 echo "<td>" . $row['address'] . "</td>";
                                 echo "<td>" . $row['salary'] . "</td>";
                                 echo "<td>";
-                               // Passing ID variable explicitly
-                               // Add the variable name and variable value to the end of the URL in the href attribute of an anchor tag
+                                // Passing ID variable explicitly
+                                // Add the variable name and variable value to the end of the URL in the href attribute of an anchor tag
                                 echo "<a href='read.php?id=" . $row['id'] . "' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
                                 echo "<a href='update.php?id=" . $row['id'] . "' title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>";
                                 echo "<a href='delete.php?id=" . $row['id'] . "' title='Delete Record' data-toggle='tooltip'><span class='glyphicon glyphicon-trash'></span></a>";
@@ -105,7 +108,7 @@ table tr td:last-child a {
                 </div>
 			</div>
 		</div>
-	<!-- 	echo "
+		<!-- 	echo "
 		 <div id='userbox'>
 			Welcome $u
 			<ul>

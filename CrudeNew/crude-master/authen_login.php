@@ -16,8 +16,8 @@ if (isset($_POST['user_id']) and isset($_POST['user_pass'])) {
     if ($count == 1) {
         
         // echo "<script type='text/javascript'>alert('Login Credentials verified')</script>";
-       
-       // $_SESSION['login'] = TRUE;
+        
+        // $_SESSION['login'] = TRUE;
         // session_start();
         include "index.php";
     } else {

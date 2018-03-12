@@ -20,10 +20,10 @@
 .page-header h2 {
 	margin-top: 0;
 }
- <!-- align right -->
- 
-table tr td:last-child a {
-	margin-right: 15px;      
+
+<!--
+align right -->table tr td:last-child a {
+	margin-right: 15px;
 }
 </style>
 <script type="text/javascript">
@@ -43,7 +43,6 @@ table tr td:last-child a {
  * die;
  * }
  */
-
 require ('dbconnect.php');
 
 if (! empty($_GET['status'])) {
@@ -54,42 +53,41 @@ if (! empty($_GET['status'])) {
             break;
         case 'err':
             $statusMsgClass = 'alert-danger';
-            $statusMsg = 'Some problem occurred, please try again.'; //  any other error
+            $statusMsg = 'Some problem occurred, please try again.'; // any other error
             break;
         case 'invalid_file':
             $statusMsgClass = 'alert-danger';
-            $statusMsg = 'Please upload a valid CSV file.';  // file format error displayed on the same form for user to try again
+            $statusMsg = 'Please upload a valid CSV file.'; // file format error displayed on the same form for user to try again
             break;
         default:
-            $statusMsgClass = '';  // keep message bar empty
+            $statusMsgClass = ''; // keep message bar empty
             $statusMsg = '';
     }
 }
 ?>
 <div class="container">
-    
-     <div class="col-md-12">
-    <div class="page-header clearfix">
-    <h5 class="pull-left" align = "right"> </h5>
-    <a href="./logout.php" class="btn btn-danger pull-right">Logout</a>
-        <a href="./index.php" class="btn btn-info pull-right">Index Page</a>
-    
-    </div>
-    </div>
+
+	<div class="col-md-12">
+		<div class="page-header clearfix">
+			<h5 class="pull-left" align="right"></h5>
+			<a href="./logout.php" class="btn btn-danger pull-right">Logout</a> <a
+				href="./index.php" class="btn btn-info pull-right">Index Page</a>
+
+		</div>
+	</div>
     
        
     <?php
-
-  
     
-if (! empty($statusMsg)) {
-        echo '<div class="alert ' . $statusMsgClass . '">' . $statusMsg . '</div>';  // dynamic allocation of style 
+    if (! empty($statusMsg)) {
+        echo '<div class="alert ' . $statusMsgClass . '">' . $statusMsg . '</div>'; // dynamic allocation of style
     }
     ?>
     <div class="panel panel-default">
 		<div class="panel-heading">
 			Employees list <a href="javascript:void(0);"
-				onclick="$('#importFrm').slideToggle();">Import Employees</a>  <!-- Animation effect of message on click in jquery -->
+				onclick="$('#importFrm').slideToggle();">Import Employees</a>
+			<!-- Animation effect of message on click in jquery -->
 		</div>
 		<div class="panel-body">
 			<form action="importData.php" method="post"
